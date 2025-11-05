@@ -28,14 +28,14 @@ public class MultithreadingTcpEchoServer {
         this.port = port;
         this.threadPool = Executors.newCachedThreadPool();
         this.isRunning = true;
-        log.info("MultithreadingTcpEchoServer initialized with port {} and {} threads", port);
+        log.info("MultithreadingTcpEchoServer initialized with port {}", port);
     }
 
     public MultithreadingTcpEchoServer() {
         this(7);
     }
 
-    public void start() throws InterruptedException {
+    public void  start() throws InterruptedException {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             this.serverSocket = serverSocket;
             log.info("Echo Server started on port {}", port);
